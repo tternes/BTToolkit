@@ -7,68 +7,33 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		DFEA84B3189DD1650049E0AC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DFEA84B2189DD1650049E0AC /* Foundation.framework */; };
-		DFEA84B8189DD1650049E0AC /* BTToolkit.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = DFEA84B7189DD1650049E0AC /* BTToolkit.h */; };
-		DFEA84BA189DD1650049E0AC /* BTToolkit.m in Sources */ = {isa = PBXBuildFile; fileRef = DFEA84B9189DD1650049E0AC /* BTToolkit.m */; };
 		DFEA84C1189DD1650049E0AC /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DFEA84C0189DD1650049E0AC /* XCTest.framework */; };
 		DFEA84C2189DD1650049E0AC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DFEA84B2189DD1650049E0AC /* Foundation.framework */; };
 		DFEA84C4189DD1650049E0AC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DFEA84C3189DD1650049E0AC /* UIKit.framework */; };
-		DFEA84C7189DD1650049E0AC /* libBTToolkit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DFEA84AF189DD1650049E0AC /* libBTToolkit.a */; };
 		DFEA84CD189DD1650049E0AC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DFEA84CB189DD1650049E0AC /* InfoPlist.strings */; };
-		DFEA84CF189DD1650049E0AC /* BTToolkitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DFEA84CE189DD1650049E0AC /* BTToolkitTests.m */; };
+		DFEA84DB189DD3930049E0AC /* UIColor+BTColorExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = DFEA84D9189DD1900049E0AC /* UIColor+BTColorExtensions.m */; };
+		DFEA84DE189DD7050049E0AC /* BTUIColorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DFEA84DD189DD7050049E0AC /* BTUIColorTests.m */; };
+		DFEA84E0189EC6930049E0AC /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = DFEA84DF189EC6930049E0AC /* README.md */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		DFEA84C5189DD1650049E0AC /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = DFEA84A7189DD1650049E0AC /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = DFEA84AE189DD1650049E0AC;
-			remoteInfo = BTToolkit;
-		};
-/* End PBXContainerItemProxy section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		DFEA84AD189DD1650049E0AC /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "include/$(PRODUCT_NAME)";
-			dstSubfolderSpec = 16;
-			files = (
-				DFEA84B8189DD1650049E0AC /* BTToolkit.h in CopyFiles */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
-
 /* Begin PBXFileReference section */
-		DFEA84AF189DD1650049E0AC /* libBTToolkit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libBTToolkit.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		DFEA84B2189DD1650049E0AC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		DFEA84B6189DD1650049E0AC /* BTToolkit-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BTToolkit-Prefix.pch"; sourceTree = "<group>"; };
-		DFEA84B7189DD1650049E0AC /* BTToolkit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BTToolkit.h; sourceTree = "<group>"; };
-		DFEA84B9189DD1650049E0AC /* BTToolkit.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BTToolkit.m; sourceTree = "<group>"; };
 		DFEA84BF189DD1650049E0AC /* BTToolkitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BTToolkitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DFEA84C0189DD1650049E0AC /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		DFEA84C3189DD1650049E0AC /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		DFEA84CA189DD1650049E0AC /* BTToolkitTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "BTToolkitTests-Info.plist"; sourceTree = "<group>"; };
 		DFEA84CC189DD1650049E0AC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		DFEA84CE189DD1650049E0AC /* BTToolkitTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BTToolkitTests.m; sourceTree = "<group>"; };
+		DFEA84D8189DD1900049E0AC /* UIColor+BTColorExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+BTColorExtensions.h"; sourceTree = SOURCE_ROOT; };
+		DFEA84D9189DD1900049E0AC /* UIColor+BTColorExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+BTColorExtensions.m"; sourceTree = SOURCE_ROOT; };
+		DFEA84DD189DD7050049E0AC /* BTUIColorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTUIColorTests.m; sourceTree = "<group>"; };
+		DFEA84DF189EC6930049E0AC /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		DFEA84AC189DD1650049E0AC /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				DFEA84B3189DD1650049E0AC /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		DFEA84BC189DD1650049E0AC /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DFEA84C7189DD1650049E0AC /* libBTToolkit.a in Frameworks */,
 				DFEA84C1189DD1650049E0AC /* XCTest.framework in Frameworks */,
 				DFEA84C4189DD1650049E0AC /* UIKit.framework in Frameworks */,
 				DFEA84C2189DD1650049E0AC /* Foundation.framework in Frameworks */,
@@ -81,6 +46,7 @@
 		DFEA84A6189DD1650049E0AC = {
 			isa = PBXGroup;
 			children = (
+				DFEA84DF189EC6930049E0AC /* README.md */,
 				DFEA84B4189DD1650049E0AC /* BTToolkit */,
 				DFEA84C8189DD1650049E0AC /* BTToolkitTests */,
 				DFEA84B1189DD1650049E0AC /* Frameworks */,
@@ -91,7 +57,6 @@
 		DFEA84B0189DD1650049E0AC /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				DFEA84AF189DD1650049E0AC /* libBTToolkit.a */,
 				DFEA84BF189DD1650049E0AC /* BTToolkitTests.xctest */,
 			);
 			name = Products;
@@ -110,25 +75,16 @@
 		DFEA84B4189DD1650049E0AC /* BTToolkit */ = {
 			isa = PBXGroup;
 			children = (
-				DFEA84B7189DD1650049E0AC /* BTToolkit.h */,
-				DFEA84B9189DD1650049E0AC /* BTToolkit.m */,
-				DFEA84B5189DD1650049E0AC /* Supporting Files */,
+				DFEA84D8189DD1900049E0AC /* UIColor+BTColorExtensions.h */,
+				DFEA84D9189DD1900049E0AC /* UIColor+BTColorExtensions.m */,
 			);
 			path = BTToolkit;
-			sourceTree = "<group>";
-		};
-		DFEA84B5189DD1650049E0AC /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				DFEA84B6189DD1650049E0AC /* BTToolkit-Prefix.pch */,
-			);
-			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		DFEA84C8189DD1650049E0AC /* BTToolkitTests */ = {
 			isa = PBXGroup;
 			children = (
-				DFEA84CE189DD1650049E0AC /* BTToolkitTests.m */,
+				DFEA84DD189DD7050049E0AC /* BTUIColorTests.m */,
 				DFEA84C9189DD1650049E0AC /* Supporting Files */,
 			);
 			path = BTToolkitTests;
@@ -146,23 +102,6 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		DFEA84AE189DD1650049E0AC /* BTToolkit */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = DFEA84D2189DD1650049E0AC /* Build configuration list for PBXNativeTarget "BTToolkit" */;
-			buildPhases = (
-				DFEA84AB189DD1650049E0AC /* Sources */,
-				DFEA84AC189DD1650049E0AC /* Frameworks */,
-				DFEA84AD189DD1650049E0AC /* CopyFiles */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = BTToolkit;
-			productName = BTToolkit;
-			productReference = DFEA84AF189DD1650049E0AC /* libBTToolkit.a */;
-			productType = "com.apple.product-type.library.static";
-		};
 		DFEA84BE189DD1650049E0AC /* BTToolkitTests */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = DFEA84D5189DD1650049E0AC /* Build configuration list for PBXNativeTarget "BTToolkitTests" */;
@@ -174,7 +113,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				DFEA84C6189DD1650049E0AC /* PBXTargetDependency */,
 			);
 			name = BTToolkitTests;
 			productName = BTToolkitTests;
@@ -202,7 +140,6 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				DFEA84AE189DD1650049E0AC /* BTToolkit */,
 				DFEA84BE189DD1650049E0AC /* BTToolkitTests */,
 			);
 		};
@@ -213,6 +150,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DFEA84E0189EC6930049E0AC /* README.md in Resources */,
 				DFEA84CD189DD1650049E0AC /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -220,31 +158,16 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		DFEA84AB189DD1650049E0AC /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				DFEA84BA189DD1650049E0AC /* BTToolkit.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		DFEA84BB189DD1650049E0AC /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DFEA84CF189DD1650049E0AC /* BTToolkitTests.m in Sources */,
+				DFEA84DE189DD7050049E0AC /* BTUIColorTests.m in Sources */,
+				DFEA84DB189DD3930049E0AC /* UIColor+BTColorExtensions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		DFEA84C6189DD1650049E0AC /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = DFEA84AE189DD1650049E0AC /* BTToolkit */;
-			targetProxy = DFEA84C5189DD1650049E0AC /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		DFEA84CB189DD1650049E0AC /* InfoPlist.strings */ = {
@@ -328,30 +251,6 @@
 			};
 			name = Release;
 		};
-		DFEA84D3189DD1650049E0AC /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				DSTROOT = /tmp/BTToolkit.dst;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "BTToolkit/BTToolkit-Prefix.pch";
-				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-			};
-			name = Debug;
-		};
-		DFEA84D4189DD1650049E0AC /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				DSTROOT = /tmp/BTToolkit.dst;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "BTToolkit/BTToolkit-Prefix.pch";
-				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-			};
-			name = Release;
-		};
 		DFEA84D6189DD1650049E0AC /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -361,8 +260,7 @@
 					"$(inherited)",
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "BTToolkit/BTToolkit-Prefix.pch";
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -382,8 +280,7 @@
 					"$(inherited)",
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "BTToolkit/BTToolkit-Prefix.pch";
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
 				INFOPLIST_FILE = "BTToolkitTests/BTToolkitTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = xctest;
@@ -401,14 +298,6 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
-		};
-		DFEA84D2189DD1650049E0AC /* Build configuration list for PBXNativeTarget "BTToolkit" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				DFEA84D3189DD1650049E0AC /* Debug */,
-				DFEA84D4189DD1650049E0AC /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
 		};
 		DFEA84D5189DD1650049E0AC /* Build configuration list for PBXNativeTarget "BTToolkitTests" */ = {
 			isa = XCConfigurationList;
