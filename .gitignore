@@ -3,3 +3,8 @@
 build/
 xcuserdata
 .DS_Store
+*.xcworkspace
+*.xcbkptlist
+*.xcuserdatad
+*.xccheckout
+*.xcbkptlist
