@@ -15,6 +15,29 @@ Grab RGB components from colors
 	- (CGFloat)bt_greenComponent;
 	- (CGFloat)bt_blueComponent;
 
+### BTINIParser
+
+Parse [.ini](http://en.wikipedia.org/wiki/INI_file) files:
+
+	a=b
+	c=d
+	e=f
+	
+	[car]
+	engine = v8 ;vrrrooom!
+	transmission = auto
+	wheels = 4
+	
+	[pluto]
+	sky = dark
+	grass = none
+	sun = cold
+
+Retrieve values in sections:
+
+	[self.ini valueForName:@"a" inSection:nil] => @"b"
+	[self.ini valueForName:@"engine" inSection:@"car"] => @"v8"
+	[self.ini valueForName:@"sun" inSection:@"pluto"] => @"cold"
 
 ## License
 
