@@ -8,14 +8,18 @@
 
 /* Begin PBXBuildFile section */
 		DF5A159618A1F24B00FE7E2D /* NSURL+BTCommonUrls.m in Sources */ = {isa = PBXBuildFile; fileRef = DF5A159518A1F24B00FE7E2D /* NSURL+BTCommonUrls.m */; };
-		DF5A159918A1F28A00FE7E2D /* BTUrlTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DF5A159818A1F28A00FE7E2D /* BTUrlTests.m */; };
 		DF5A15A218A1F6CB00FE7E2D /* UIView+BTScreenshot.m in Sources */ = {isa = PBXBuildFile; fileRef = DF5A15A118A1F6CB00FE7E2D /* UIView+BTScreenshot.m */; };
+		DF6285D318CEC700008344FE /* BTUrlTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DF5A159818A1F28A00FE7E2D /* BTUrlTests.m */; };
+		DF6285D418CEC703008344FE /* BTUIColorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DFEA84DD189DD7050049E0AC /* BTUIColorTests.m */; };
+		DF79CABE18C9A83F000870AF /* BTINIParser.m in Sources */ = {isa = PBXBuildFile; fileRef = DF79CABD18C9A83F000870AF /* BTINIParser.m */; };
+		DF79CAC018C9A9D5000870AF /* BTINITests.m in Sources */ = {isa = PBXBuildFile; fileRef = DF79CABF18C9A9D5000870AF /* BTINITests.m */; };
+		DF79CAC318C9AC1F000870AF /* BTFileReader.m in Sources */ = {isa = PBXBuildFile; fileRef = DF79CAC218C9AC1F000870AF /* BTFileReader.m */; };
+		DF79CAC618CD12E7000870AF /* NSString+BTStringExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = DF79CAC518CD12E7000870AF /* NSString+BTStringExtensions.m */; };
 		DFEA84C1189DD1650049E0AC /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DFEA84C0189DD1650049E0AC /* XCTest.framework */; };
 		DFEA84C2189DD1650049E0AC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DFEA84B2189DD1650049E0AC /* Foundation.framework */; };
 		DFEA84C4189DD1650049E0AC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DFEA84C3189DD1650049E0AC /* UIKit.framework */; };
 		DFEA84CD189DD1650049E0AC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DFEA84CB189DD1650049E0AC /* InfoPlist.strings */; };
 		DFEA84DB189DD3930049E0AC /* UIColor+BTColorExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = DFEA84D9189DD1900049E0AC /* UIColor+BTColorExtensions.m */; };
-		DFEA84DE189DD7050049E0AC /* BTUIColorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DFEA84DD189DD7050049E0AC /* BTUIColorTests.m */; };
 		DFEA84E0189EC6930049E0AC /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = DFEA84DF189EC6930049E0AC /* README.md */; };
 /* End PBXBuildFile section */
 
@@ -25,6 +29,14 @@
 		DF5A159818A1F28A00FE7E2D /* BTUrlTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTUrlTests.m; sourceTree = "<group>"; };
 		DF5A15A018A1F6CB00FE7E2D /* UIView+BTScreenshot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+BTScreenshot.h"; sourceTree = SOURCE_ROOT; };
 		DF5A15A118A1F6CB00FE7E2D /* UIView+BTScreenshot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+BTScreenshot.m"; sourceTree = SOURCE_ROOT; };
+		DF6285D518CEC851008344FE /* BTARCHelpers.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BTARCHelpers.h; sourceTree = SOURCE_ROOT; };
+		DF79CABC18C9A83F000870AF /* BTINIParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTINIParser.h; sourceTree = SOURCE_ROOT; };
+		DF79CABD18C9A83F000870AF /* BTINIParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTINIParser.m; sourceTree = SOURCE_ROOT; };
+		DF79CABF18C9A9D5000870AF /* BTINITests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTINITests.m; sourceTree = "<group>"; };
+		DF79CAC118C9AC1F000870AF /* BTFileReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTFileReader.h; sourceTree = SOURCE_ROOT; };
+		DF79CAC218C9AC1F000870AF /* BTFileReader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTFileReader.m; sourceTree = SOURCE_ROOT; };
+		DF79CAC418CD12E7000870AF /* NSString+BTStringExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+BTStringExtensions.h"; sourceTree = SOURCE_ROOT; };
+		DF79CAC518CD12E7000870AF /* NSString+BTStringExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+BTStringExtensions.m"; sourceTree = SOURCE_ROOT; };
 		DFEA84B2189DD1650049E0AC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		DFEA84BF189DD1650049E0AC /* BTToolkitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BTToolkitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DFEA84C0189DD1650049E0AC /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -83,12 +95,19 @@
 		DFEA84B4189DD1650049E0AC /* BTToolkit */ = {
 			isa = PBXGroup;
 			children = (
+				DF79CAC118C9AC1F000870AF /* BTFileReader.h */,
+				DF79CAC218C9AC1F000870AF /* BTFileReader.m */,
+				DF79CABC18C9A83F000870AF /* BTINIParser.h */,
+				DF79CABD18C9A83F000870AF /* BTINIParser.m */,
+				DF79CAC418CD12E7000870AF /* NSString+BTStringExtensions.h */,
+				DF79CAC518CD12E7000870AF /* NSString+BTStringExtensions.m */,
 				DF5A159418A1F24B00FE7E2D /* NSURL+BTCommonUrls.h */,
 				DF5A159518A1F24B00FE7E2D /* NSURL+BTCommonUrls.m */,
 				DFEA84D8189DD1900049E0AC /* UIColor+BTColorExtensions.h */,
 				DFEA84D9189DD1900049E0AC /* UIColor+BTColorExtensions.m */,
 				DF5A15A018A1F6CB00FE7E2D /* UIView+BTScreenshot.h */,
 				DF5A15A118A1F6CB00FE7E2D /* UIView+BTScreenshot.m */,
+				DF6285D518CEC851008344FE /* BTARCHelpers.h */,
 			);
 			path = BTToolkit;
 			sourceTree = "<group>";
@@ -98,6 +117,7 @@
 			children = (
 				DFEA84DD189DD7050049E0AC /* BTUIColorTests.m */,
 				DF5A159818A1F28A00FE7E2D /* BTUrlTests.m */,
+				DF79CABF18C9A9D5000870AF /* BTINITests.m */,
 				DFEA84C9189DD1650049E0AC /* Supporting Files */,
 			);
 			path = BTToolkitTests;
@@ -175,11 +195,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DF79CAC618CD12E7000870AF /* NSString+BTStringExtensions.m in Sources */,
+				DF6285D418CEC703008344FE /* BTUIColorTests.m in Sources */,
+				DF79CAC018C9A9D5000870AF /* BTINITests.m in Sources */,
 				DF5A15A218A1F6CB00FE7E2D /* UIView+BTScreenshot.m in Sources */,
+				DF6285D318CEC700008344FE /* BTUrlTests.m in Sources */,
+				DF79CAC318C9AC1F000870AF /* BTFileReader.m in Sources */,
 				DF5A159618A1F24B00FE7E2D /* NSURL+BTCommonUrls.m in Sources */,
-				DFEA84DE189DD7050049E0AC /* BTUIColorTests.m in Sources */,
+				DF79CABE18C9A83F000870AF /* BTINIParser.m in Sources */,
 				DFEA84DB189DD3930049E0AC /* UIColor+BTColorExtensions.m in Sources */,
-				DF5A159918A1F28A00FE7E2D /* BTUrlTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
