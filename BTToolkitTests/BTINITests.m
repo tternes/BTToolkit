@@ -19,7 +19,8 @@
 {
     [super setUp];
 
-    self.ini = [[BTINIParser alloc] initWithFilePath:@"/Users/thaddeus/Desktop/demo.ini"];
+    NSString *iniFilePath = [[NSBundle bundleForClass:[self class]] pathForResource:@"ini_parser_test" ofType:@"ini"];
+    self.ini = [[BTINIParser alloc] initWithFilePath:iniFilePath];
 }
 
 - (void)tearDown
@@ -30,6 +31,8 @@
 
 - (void)testLoading
 {
+    XCTAssert(self.ini, @"loaded ini file successfully");
+    
     // no section
     XCTAssert([[self.ini valueForName:@"a" inSection:nil] isEqualToString:@"b"], @"a=b");
     XCTAssert([[self.ini valueForName:@"c" inSection:nil] isEqualToString:@"d"], @"c=d");

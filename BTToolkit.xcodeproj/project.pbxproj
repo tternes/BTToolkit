@@ -11,6 +11,7 @@
 		DF5A15A218A1F6CB00FE7E2D /* UIView+BTScreenshot.m in Sources */ = {isa = PBXBuildFile; fileRef = DF5A15A118A1F6CB00FE7E2D /* UIView+BTScreenshot.m */; };
 		DF6285D318CEC700008344FE /* BTUrlTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DF5A159818A1F28A00FE7E2D /* BTUrlTests.m */; };
 		DF6285D418CEC703008344FE /* BTUIColorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DFEA84DD189DD7050049E0AC /* BTUIColorTests.m */; };
+		DF6285D718CECDD5008344FE /* ini_parser_test.ini in Resources */ = {isa = PBXBuildFile; fileRef = DF6285D618CECDD5008344FE /* ini_parser_test.ini */; };
 		DF79CABE18C9A83F000870AF /* BTINIParser.m in Sources */ = {isa = PBXBuildFile; fileRef = DF79CABD18C9A83F000870AF /* BTINIParser.m */; };
 		DF79CAC018C9A9D5000870AF /* BTINITests.m in Sources */ = {isa = PBXBuildFile; fileRef = DF79CABF18C9A9D5000870AF /* BTINITests.m */; };
 		DF79CAC318C9AC1F000870AF /* BTFileReader.m in Sources */ = {isa = PBXBuildFile; fileRef = DF79CAC218C9AC1F000870AF /* BTFileReader.m */; };
@@ -30,6 +31,7 @@
 		DF5A15A018A1F6CB00FE7E2D /* UIView+BTScreenshot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+BTScreenshot.h"; sourceTree = SOURCE_ROOT; };
 		DF5A15A118A1F6CB00FE7E2D /* UIView+BTScreenshot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+BTScreenshot.m"; sourceTree = SOURCE_ROOT; };
 		DF6285D518CEC851008344FE /* BTARCHelpers.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BTARCHelpers.h; sourceTree = SOURCE_ROOT; };
+		DF6285D618CECDD5008344FE /* ini_parser_test.ini */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ini_parser_test.ini; sourceTree = "<group>"; };
 		DF79CABC18C9A83F000870AF /* BTINIParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTINIParser.h; sourceTree = SOURCE_ROOT; };
 		DF79CABD18C9A83F000870AF /* BTINIParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTINIParser.m; sourceTree = SOURCE_ROOT; };
 		DF79CABF18C9A9D5000870AF /* BTINITests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTINITests.m; sourceTree = "<group>"; };
@@ -126,6 +128,7 @@
 		DFEA84C9189DD1650049E0AC /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				DF6285D618CECDD5008344FE /* ini_parser_test.ini */,
 				DFEA84CA189DD1650049E0AC /* BTToolkitTests-Info.plist */,
 				DFEA84CB189DD1650049E0AC /* InfoPlist.strings */,
 			);
@@ -185,6 +188,7 @@
 			files = (
 				DFEA84E0189EC6930049E0AC /* README.md in Resources */,
 				DFEA84CD189DD1650049E0AC /* InfoPlist.strings in Resources */,
+				DF6285D718CECDD5008344FE /* ini_parser_test.ini in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
