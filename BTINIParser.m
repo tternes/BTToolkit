@@ -52,10 +52,50 @@ static NSString *BTEmptySectionName = @"__BTEmptySection__"; // TODO: possible c
 
 #pragma mark - Public
 
+- (NSUInteger)numberOfSections
+{
+    // remove empty section
+    NSUInteger count = [self.sections.allKeys count];
+    
+    // don't include the empty section
+    if([self hasEmptySection])
+        count--;
+
+    return count;
+}
+
+- (NSArray *)sectionNames
+{
+    NSMutableArray *sectionNames = [NSMutableArray arrayWithArray:self.sections.allKeys];
+    
+    if([self hasEmptySection])
+    {
+        __block NSUInteger removeIdx = NSNotFound;
+        [sectionNames enumerateObjectsUsingBlock:^(NSString *section, NSUInteger idx, BOOL *stop) {
+
+            if([section isEqualToString:BTEmptySectionName])
+            {
+                *stop = YES;
+                removeIdx = idx;
+            }
+        }];
+        
+        if(removeIdx != NSNotFound)
+            [sectionNames removeObjectAtIndex:removeIdx];
+    }
+
+    return sectionNames;
+}
+
 - (BOOL)hasSectionNamed:(NSString *)section
 {
     _SAFE_SECTION_NAME(section);
     return ([self.sections valueForKey:section]) ? YES : NO;
+}
+
+- (BOOL)hasEmptySection
+{
+    return [self hasSectionNamed:BTEmptySectionName];
 }
 
 - (NSUInteger)numberOfValuesInSection:(NSString *)section

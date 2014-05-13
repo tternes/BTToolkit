@@ -67,6 +67,15 @@
     XCTAssert([[self.ini valueForName:@"another" inSection:@"spaced out"] isEqualToString:@"1 2 3 4 5 6      9"], @"");
     
     XCTAssert([[self.ini valueForName:@"the" inSection:@"inline third"] isEqualToString:@"end"], @"");
+    
+    // sections
+    NSUInteger numberofSections = [self.ini numberOfSections];
+    XCTAssert(numberofSections == 14, @"14 sections in file");
+    
+    NSArray *sections = [self.ini sectionNames];
+    XCTAssert([sections count] == 14, @"14 sections returned in name list");
+    
+    XCTAssert([self.ini hasEmptySection], @"has empty section");
 }
 
 @end

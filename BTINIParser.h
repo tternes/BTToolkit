@@ -15,7 +15,11 @@
 
 #pragma mark - Public
 
+- (NSUInteger)numberOfSections;
+- (NSArray *)sectionNames;
 - (BOOL)hasSectionNamed:(NSString *)section;
+- (BOOL)hasEmptySection;
+
 - (NSUInteger)numberOfValuesInSection:(NSString *)section;
 
 - (id)valueForName:(NSString *)name inSection:(NSString *)section;
