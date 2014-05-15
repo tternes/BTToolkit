@@ -20,19 +20,33 @@ typedef NS_ENUM(NSUInteger, BTINIParserState)
     BTINIParserValue,
 };
 
-static NSString *BTEmptySectionName = @"__BTEmptySection__"; // TODO: possible collision
+static NSString *BTGlobalSectionName = @"__BTGlobalSection__"; // TODO: possible collision
 
 @interface BTINIParser ()
 @property (nonatomic, retain) BTFileReader *fileReader;
 @property (nonatomic, retain) NSMutableDictionary *sections;
 @end
 
-#define _SAFE_SECTION_NAME(x) x = (x == nil) ? BTEmptySectionName : x
+#define _SAFE_SECTION_NAME(x) x = (x == nil) ? BTGlobalSectionName : x
 
 @implementation BTINIParser
 
 - (id)initWithFilePath:(NSString *)path
 {
+    BOOL isDirectory = NO;
+    if([[NSFileManager defaultManager] fileExistsAtPath:path isDirectory:&isDirectory] == NO)
+    {
+        // file does not exist
+        BT_RELEASE_SELF;
+        return nil;
+    }
+    
+    if(isDirectory)
+    {
+        BT_RELEASE_SELF;
+        return nil;
+    }
+    
     self = [super init];
     if(self)
     {
@@ -58,7 +72,7 @@ static NSString *BTEmptySectionName = @"__BTEmptySection__"; // TODO: possible c
     NSUInteger count = [self.sections.allKeys count];
     
     // don't include the empty section
-    if([self hasEmptySection])
+    if([self hasGlobalSection])
         count--;
 
     return count;
@@ -68,12 +82,12 @@ static NSString *BTEmptySectionName = @"__BTEmptySection__"; // TODO: possible c
 {
     NSMutableArray *sectionNames = [NSMutableArray arrayWithArray:self.sections.allKeys];
     
-    if([self hasEmptySection])
+    if([self hasGlobalSection])
     {
         __block NSUInteger removeIdx = NSNotFound;
         [sectionNames enumerateObjectsUsingBlock:^(NSString *section, NSUInteger idx, BOOL *stop) {
 
-            if([section isEqualToString:BTEmptySectionName])
+            if([section isEqualToString:BTGlobalSectionName])
             {
                 *stop = YES;
                 removeIdx = idx;
@@ -93,9 +107,9 @@ static NSString *BTEmptySectionName = @"__BTEmptySection__"; // TODO: possible c
     return ([self.sections valueForKey:section]) ? YES : NO;
 }
 
-- (BOOL)hasEmptySection
+- (BOOL)hasGlobalSection
 {
-    return [self hasSectionNamed:BTEmptySectionName];
+    return [self hasSectionNamed:BTGlobalSectionName];
 }
 
 - (NSUInteger)numberOfValuesInSection:(NSString *)section
@@ -114,7 +128,7 @@ static NSString *BTEmptySectionName = @"__BTEmptySection__"; // TODO: possible c
 
 - (void)privateReadFile
 {
-    NSMutableString *currentSectionName = [NSMutableString stringWithString:BTEmptySectionName];
+    NSMutableString *currentSectionName = [NSMutableString stringWithString:BTGlobalSectionName];
     
     [self.sections setValue:[NSMutableDictionary dictionary] forKey:currentSectionName];
     while(!self.fileReader.isEndOfFile)
@@ -251,10 +265,6 @@ static NSString *BTEmptySectionName = @"__BTEmptySection__"; // TODO: possible c
             [self setValue:currentValue forName:currentName inSection:currentSectionName];
         }
     }
-    
-#ifdef DEBUG
-    NSLog(@"%@", [self sections]);
-#endif
 }
 
 - (void)setValue:(NSString *)value forName:(NSString *)name inSection:(NSString *)section

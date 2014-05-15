@@ -11,6 +11,7 @@
 
 @interface BTINITests : XCTestCase
 @property (nonatomic, strong) BTINIParser *ini;
+@property (nonatomic, strong) BTINIParser *invalidPath;
 @end
 
 @implementation BTINITests
@@ -21,18 +22,35 @@
 
     NSString *iniFilePath = [[NSBundle bundleForClass:[self class]] pathForResource:@"ini_parser_test" ofType:@"ini"];
     self.ini = [[BTINIParser alloc] initWithFilePath:iniFilePath];
+    
+    self.invalidPath = [[BTINIParser alloc] initWithFilePath:@"/something/that/does/not/exist.ini"];
 }
 
 - (void)tearDown
 {
     [super tearDown];
     self.ini = nil;
+    self.invalidPath = nil;
 }
 
 - (void)testLoading
 {
     XCTAssert(self.ini, @"loaded ini file successfully");
+}
+
+- (void)testSectionAccess
+{
+    NSUInteger numberofSections = [self.ini numberOfSections];
+    XCTAssert(numberofSections == 14, @"14 sections in file");
     
+    NSArray *sections = [self.ini sectionNames];
+    XCTAssert([sections count] == 14, @"14 sections returned in name list");
+    
+    XCTAssert([self.ini hasGlobalSection], @"has global section");
+}
+
+- (void)testDataAccess
+{
     // no section
     XCTAssert([[self.ini valueForName:@"a" inSection:nil] isEqualToString:@"b"], @"a=b");
     XCTAssert([[self.ini valueForName:@"c" inSection:nil] isEqualToString:@"d"], @"c=d");
@@ -67,15 +85,13 @@
     XCTAssert([[self.ini valueForName:@"another" inSection:@"spaced out"] isEqualToString:@"1 2 3 4 5 6      9"], @"");
     
     XCTAssert([[self.ini valueForName:@"the" inSection:@"inline third"] isEqualToString:@"end"], @"");
-    
-    // sections
-    NSUInteger numberofSections = [self.ini numberOfSections];
-    XCTAssert(numberofSections == 14, @"14 sections in file");
-    
-    NSArray *sections = [self.ini sectionNames];
-    XCTAssert([sections count] == 14, @"14 sections returned in name list");
-    
-    XCTAssert([self.ini hasEmptySection], @"has empty section");
+}
+
+- (void)testInvalidFilePath
+{
+    XCTAssert(self.invalidPath == nil, @"invalid path was not loaded");
+    XCTAssert([self.invalidPath numberOfSections] == 0, @"no sections in an invalid file");
+    XCTAssert([self.invalidPath sectionNames] == nil, @"no section names in invalid file");
 }
 
 @end
