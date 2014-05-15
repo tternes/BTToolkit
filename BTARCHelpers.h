@@ -11,8 +11,10 @@
 
 #if __has_feature(objc_arc)
 #define BT_SUPER_DEALLOC
+#define BT_RELEASE_SELF
 #else
 #define BT_SUPER_DEALLOC [super dealloc]
+#define BT_RELEASE_SELF [self release]
 #endif
 
 #endif
