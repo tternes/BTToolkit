@@ -38,6 +38,11 @@
     XCTAssert(self.ini, @"loaded ini file successfully");
 }
 
+- (void)testGlobalCount
+{
+    XCTAssertEqual([self.ini numberOfValuesInGlobalSection], (NSUInteger)3, @"should be 3 items in global section");
+}
+
 - (void)testSectionAccess
 {
     NSUInteger numberofSections = [self.ini numberOfSections];
@@ -89,9 +94,59 @@
 
 - (void)testInvalidFilePath
 {
-    XCTAssert(self.invalidPath == nil, @"invalid path was not loaded");
-    XCTAssert([self.invalidPath numberOfSections] == 0, @"no sections in an invalid file");
-    XCTAssert([self.invalidPath sectionNames] == nil, @"no section names in invalid file");
+    XCTAssertNil(self.invalidPath, @"invalid path was not loaded");
+    XCTAssertEqual([self.invalidPath numberOfSections], (NSUInteger)0, @"no sections in an invalid file");
+    XCTAssertNil([self.invalidPath sectionNames], @"no section names in invalid file");
+}
+
+- (void)testPropertyEnumeration
+{
+    __block NSUInteger expectedValueCount = 3;
+    XCTAssertEqual([self.ini numberOfValuesInSection:@"car"], expectedValueCount, @"");
+
+    [self.ini enumerateSection:@"car" usingBlock:^(NSString *name, id value, BOOL *stop) {
+
+        NSLog(@"property in car section: %@=%@", name, value);
+        XCTAssertNotNil(value, @"value should not be nil");
+        expectedValueCount--;
+        
+    }];
+    
+    XCTAssertEqual(expectedValueCount, (NSUInteger)0, @"counted all expected properties in cars");
+}
+
+- (void)testGlobalSectionEnumeration
+{
+    __block NSUInteger expectedValueCount = 3;
+    XCTAssertEqual([self.ini numberOfValuesInGlobalSection], expectedValueCount, @"should be three valid properties in ini_parser_test.ini");
+    
+    [self.ini enumerateGlobalSectionUsingBlock:^(NSString *name, id value, BOOL *stop) {
+        
+        NSLog(@"property in global: %@=%@", name, value);
+        XCTAssert(value, @"value should not be nil");
+        expectedValueCount--;
+        
+    }];
+    
+    XCTAssertEqual(expectedValueCount, (NSUInteger)0, @"counted all global properties");
+}
+
+- (void)testPropertyEnumerationStop
+{
+    __block NSUInteger expectedValueCount = 3;
+    XCTAssertEqual([self.ini numberOfValuesInSection:@"car"], expectedValueCount, @"");
+
+    [self.ini enumerateSection:@"car" usingBlock:^(NSString *name, id value, BOOL *stop) {
+        
+        NSLog(@"property in section: %@=%@", name, value);
+        XCTAssert(value, @"value should not be nil");
+        expectedValueCount--;
+        
+        *stop = YES;
+        
+    }];
+    
+    XCTAssertEqual(expectedValueCount, (NSUInteger)2, @"should have only enumerated the first property");
 }
 
 @end

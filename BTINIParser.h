@@ -54,6 +54,14 @@
 - (BOOL)hasSectionNamed:(NSString *)section;
 
 /**
+ *  Called to determine the number of properties in the global section. As an aside, this value cannot be zero, since the global section is
+ *  only present if a value is contained before the first section declaration.
+ *
+ *  @return Number of properties that precede the first section declaration.
+ */
+- (NSUInteger)numberOfValuesInGlobalSection;
+
+/**
  *  Called to determine the number of values in a particular section
  *
  *  @param section The name of the section
@@ -71,5 +79,22 @@
  *  @return Returns an object representing the specified property, or nil if an error occurs
  */
 - (id)valueForName:(NSString *)name inSection:(NSString *)section;
+
+#pragma mark - Enumeration
+
+/**
+ *  Enumerates the properties of a given section
+ *
+ *  @param section name of the section whose properties should be enumerated
+ *  @param block   executed block for each property in the section
+ */
+- (void)enumerateSection:(NSString *)section usingBlock:(void(^)(NSString *name, id value, BOOL *stop))block;
+
+/**
+ *  Enumerates properties in the global section
+ *
+ *  @param block executed block for each property in the global section
+ */
+- (void)enumerateGlobalSectionUsingBlock:(void(^)(NSString *name, id value, BOOL *stop))block;
 
 @end

@@ -66,6 +66,16 @@ static NSString *BTGlobalSectionName = @"__BTGlobalSection__"; // TODO: possible
 
 #pragma mark - Public
 
+- (NSUInteger)numberOfValuesInGlobalSection
+{
+    if([self hasGlobalSection])
+    {
+        return [self numberOfValuesInSection:BTGlobalSectionName];
+    }
+    
+    return 0;
+}
+
 - (NSUInteger)numberOfSections
 {
     // remove empty section
@@ -122,6 +132,22 @@ static NSString *BTGlobalSectionName = @"__BTGlobalSection__"; // TODO: possible
 {
     _SAFE_SECTION_NAME(section);
     return [[[self sections] valueForKey:section] valueForKey:name];
+}
+
+- (void)enumerateSection:(NSString *)section usingBlock:(void(^)(NSString *name, id value, BOOL *stop))block
+{
+    NSDictionary *sectionObject = [[self sections] valueForKey:section];
+    [[sectionObject allKeys] enumerateObjectsUsingBlock:^(NSString *key, NSUInteger idx, BOOL *stop) {
+
+        id valueObject = [sectionObject valueForKey:key];
+        block(key, valueObject, stop);
+        
+    }];
+}
+
+- (void)enumerateGlobalSectionUsingBlock:(void(^)(NSString *name, id value, BOOL *stop))block
+{
+    [self enumerateSection:BTGlobalSectionName usingBlock:block];
 }
 
 #pragma mark - Private
