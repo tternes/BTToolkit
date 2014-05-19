@@ -1,0 +1,3 @@
+language: objective-c
+xcode_project: BTToolkit.xcodeproj
+xcode_scheme: BTToolkitTests
