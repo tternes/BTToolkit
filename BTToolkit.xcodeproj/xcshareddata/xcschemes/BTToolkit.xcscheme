@@ -20,6 +20,20 @@
                ReferencedContainer = "container:BTToolkit.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "NO"
+            buildForArchiving = "NO"
+            buildForAnalyzing = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "DFEA84BE189DD1650049E0AC"
+               BuildableName = "BTToolkitTests.xctest"
+               BlueprintName = "BTToolkitTests"
+               ReferencedContainer = "container:BTToolkit.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction

@@ -1,3 +1,7 @@
 language: objective-c
+before_install:
+  - brew update
+  - brew upgrade xctool
 xcode_project: BTToolkit.xcodeproj
 xcode_scheme: BTToolkit
+xcode_sdk: iphonesimulator
