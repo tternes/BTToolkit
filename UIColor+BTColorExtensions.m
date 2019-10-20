@@ -18,8 +18,8 @@
     if ([hexColor hasPrefix:@"#"])
         hexColor = [hexColor substringFromIndex:1];
     
-    // string should be 6 characters
-    if ([hexColor length] != 6)
+    // string should be 6 or 8 characters RRGGBB[AA]
+    if (hexColor.length != 6 && hexColor.length != 8)
     {
         return nil;
     }
@@ -37,13 +37,21 @@
     range.location = 4;
     NSString *blue = [hexColor substringWithRange:range];
     
+    range.location = 6;
+    NSString *alpha = @"FF";
+    if(hexColor.length == 8)
+    {
+        alpha = [hexColor substringWithRange:range];
+    }
+    
     // Scan values
-    unsigned int r, g, b;
+    unsigned int r, g, b, a;
     [[NSScanner scannerWithString:red] scanHexInt:&r];
     [[NSScanner scannerWithString:green] scanHexInt:&g];
     [[NSScanner scannerWithString:blue] scanHexInt:&b];
+    [[NSScanner scannerWithString:alpha] scanHexInt:&a];
     
-    return [UIColor colorWithRed:(float)r/255.0f green:(float)g/255.0f blue:(float)b/255.0f alpha:1.0f];
+    return [UIColor colorWithRed:(float)r/255.0f green:(float)g/255.0f blue:(float)b/255.0f alpha:(float)a/255.f];
 }
 
 - (CGFloat)bt_redComponent
